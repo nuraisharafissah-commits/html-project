@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -9,9 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
 
   <style>
-    
-    body {
+    /* ===== GLOBAL ===== */
+    body, html {
+      overflow-x: hidden;
       margin: 0;
+      padding: 0;
       font-family: 'Poppins', sans-serif;
       color: #333;
     }
@@ -24,71 +26,77 @@
       scroll-behavior: smooth;
     }
 
-    /* Section Layout */
+    /* ===== HEADER / FIRST DIVISION ===== */
+    #firstdivision {
+      position: relative;
+      background-image: url('header2.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 60vh;
+      padding-top: 40px;
+      text-align:center;
+    }
+
+    #firstdivision img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%;
+      border: 8px solid #FFF5EE;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    #firstdivision h1 {
+      font-family:'Poppins', sans-serif;
+      font-size:70px;
+      color:#fff;
+      margin:50px 0 10px 0;
+      font-weight:600;
+      text-shadow:0 0 5px #ffb3d9,
+                  0 0 10px #ff8cc6,
+                  0 0 15px #ff66b2;
+    }
+
+    #firstdivision p {
+      font-family:'Poppins', sans-serif;
+      font-size:22px;
+      color:#fff;
+      font-weight:600;
+      letter-spacing:0.5px;
+      text-shadow:0 0 5px #ffb3d9,
+                  0 0 10px #ff8cc6,
+                  0 0 15px #ff66b2;
+      margin-top:-5px;
+    }
+
+    /* ===== SECTIONS ===== */
     .section {
       display: flex;
       align-items: flex-start;
       gap: 40px;
-      padding: 50px;
+      padding: 50px 5%; /* responsive padding */
     }
 
     .section img {
       width: 100%;
+      height: auto;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    .text-column {
-      flex: 2;
-      line-height: 1.8;
-    }
+    .text-column { flex: 2; line-height: 1.8; }
+    .image-column { flex: 1; }
 
-    .image-column {
-      flex: 1;
-    }
+    /* ===== WORK EXPERIENCE FIX ===== */
+    #fifthdivision { align-items: center; }
+    #fifthdivision h3 { margin: 10px 0 8px 0; }
+    #fifthdivision ul { margin-top:0; padding-left:20px; }
+    #fifthdivision .image-column { padding-top:10px; }
 
-    /* ===== FIX WORK EXPERIENCE LAYOUT ===== */
-#fifthdivision {
-  align-items: center; /* gambar center vertikal dengan text */
-}
+    .section h2 { font-size:28px; font-weight:700; margin-bottom:15px; color:#FF95A6; }
+    .section p { font-size:16px; margin-bottom:15px; text-align:justify; text-justify:inter-word; }
+    .section a { color: #BEA2CE; text-decoration:none; }
 
-#fifthdivision h3 {
-  margin-top: 10px;
-  margin-bottom: 8px;
-}
-
-#fifthdivision ul {
-  margin-top: 0;
-  padding-left: 20px;
-}
-
-#fifthdivision .image-column {
-  padding-top: 10px; /* optional, adjust ikut kesesuaian */
-}
-
-
-    /* Headings */
-    .section h2 {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 15px;
-      color: #FF95A6;
-    }
-
-    /* Paragraphs */
-    .section p {
-      font-size: 16px;
-      margin-bottom: 15px;
-      text-align: justify;
-      text-justify: inter-word;
-    }
-
-    .section a {
-      color: #BEA2CE;
-      text-decoration: none;
-    }
-
-    /* Navigation Top Right */
+    /* ===== NAVIGATION TOP RIGHT ===== */
     #nav-top {
       position: absolute;
       top: 30px;
@@ -97,18 +105,10 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    #nav-top a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 10px;
-      transition: 0.3s;
-    }
+    #nav-top a { color: #fff; text-decoration: none; margin:0 10px; transition:0.3s; }
+    #nav-top a:hover { color:#D2BFDE; }
 
-    #nav-top a:hover {
-      color: #D2BFDE;
-    }
-
-    /* Contact Card */
+    /* ===== CONTACT CARD ===== */
     .contact-card {
       background-color: #fff;
       padding: 50px 30px;
@@ -121,10 +121,7 @@
       margin: 50px auto;
     }
 
-    .contact-card h2 {
-      color: #FF95A6;
-      margin-bottom: 30px;
-    }
+    .contact-card h2 { color:#FF95A6; margin-bottom:30px; }
 
     .contact-icons {
       display: flex;
@@ -134,8 +131,7 @@
     }
 
     .contact-icons a div {
-      width: 80px;
-      height: 80px;
+      width: 80px; height: 80px;
       border-radius: 50%;
       background-color: #fff;
       border: 2px solid #FF95A6;
@@ -143,86 +139,42 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: 0.3s;
+      transition:0.3s;
       cursor: pointer;
     }
 
-    .contact-icons a div:hover {
-      transform: scale(1.1);
-      border-width: 3px;
-    }
+    .contact-icons a div:hover { transform: scale(1.1); border-width:3px; }
 
-    /* Responsive */
-    @media screen and (max-width: 768px) {
-      .section {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .image-column, .text-column {
-        flex: none;
-        width: 100%;
-      }
-
-      #nav-top {
-        position: static;
-        margin-top: 20px;
-      }
-    }
     /* ===== CONTACT FORM ===== */
-.contact-form {
-  margin-top: 35px;
-}
+    .contact-form { margin-top:35px; }
+    .form-row { display:flex; gap:15px; margin-bottom:15px; }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding:12px 15px;
+      border:1.5px solid #ccc;
+      border-radius:6px;
+      font-family:'Poppins', sans-serif;
+      font-size:14px;
+    }
 
-.form-row {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
-}
+    .contact-form textarea { resize:none; height:50px; }
+    .contact-form button {
+      margin-top:20px;
+      background:#000;
+      color:#fff;
+      border:none;
+      padding:10px 20px;
+      font-weight:600;
+      border-radius:6px;
+      cursor:pointer;
+      float:right;
+    }
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1.5px solid #ccc;
-  border-radius: 6px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-}
-
-.contact-form textarea {
-  resize: none;
-  height: 50px;   
-  width: 399px;
-}
-
-.contact-form button {
-  margin-top: 20px;
-  background: #000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-  float: right;
-}
-
-.contact-form button:hover {
-  opacity: 0.85;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .form-row {
-    flex-direction: column;
-  }
-}
-
+    .contact-form button:hover { opacity:0.85; }
 
     /* ===== INTEREST / SONGS THUMBNAIL ===== */
     .interest-section {
-      padding: 60px 10%;
+      padding:60px 10%;
       background-image: url('whitepink.jpeg');  
       background-size: cover;      
       background-position: center;
@@ -235,6 +187,7 @@
       justify-content: center;
       gap: 30px;
       flex-wrap: wrap;
+      max-width: 100%;
     }
 
     .interest-box {
@@ -248,260 +201,188 @@
       transition: transform 0.3s;
     }
 
-    .interest-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Overlay for Interest Boxes */
+    .interest-box img { width:100%; height:100%; object-fit:cover; }
     .interest-overlay {
       position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: auto;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-direction: column;
-      align-items: center;
-      white-space: nowrap;  
+      bottom:10px;
+      left:50%;
+      transform:translateX(-50%);
+      width:auto;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-direction:column;
+      align-items:center;
+      white-space:nowrap;
     }
 
-    .interest-overlay h3 {
-      color: white;
-      font-size: 18px;
-      font-weight: 600;
-      margin: 0;
-      text-decoration: underline;
-    }
+    .interest-overlay h3 { color:white; font-size:18px; font-weight:600; margin:0; text-decoration:underline; }
 
     .see-more-overlay {
       background: rgba(255,149,166,0.85);
-      color: #fff;
-      padding: 6px 15px;
-      font-size: 12px;
-      font-weight: 500;
-      border-radius: 20px;
-      opacity: 0;
-      white-space: nowrap;
+      color:#fff;
+      padding:6px 15px;
+      font-size:12px;
+      font-weight:500;
+      border-radius:20px;
+      opacity:0;
+      white-space:nowrap;
       transition: opacity 0.3s;
-      text-decoration: none;
+      text-decoration:none;
     }
 
-    .interest-box:hover .see-more-overlay {
-      opacity: 1;
-    }
+    .interest-box:hover .see-more-overlay { opacity:1; }
+    .interest-box:hover { transform:translateY(-5px); }
 
-    .interest-box:hover {
-      transform: translateY(-5px);
-    }
-
-    /* ===== MY GALLERY ===== */
+    /* ===== GALLERY SECTION ===== */
     .gallery-section {
-  max-width: 1000px;      
-  margin: 40px auto;      
-  padding: 40px;           
-  text-align: center;
-  background: url('whitepink.jpeg') center/cover;
-  border: 3px solid #EF007E;
-  border-radius: 15px;
-}
-
-    .gallery-title-box {
-      display: block;
-      background: #FFEEF3;
-      padding: 25px 0;
-      margin: 0 auto 60px;
+      max-width:1000px;
+      margin:40px auto;
+      padding:40px;
+      text-align:center;
+      background: url('whitepink.jpeg') center/cover;
+      border:3px solid #EF007E;
+      border-radius:15px;
     }
 
-    .gallery-title-box h2 {
-      color: #EF007E;
-      font-size: 48px;
-      letter-spacing: 1px;
-      margin: 0;
-    }
+    .gallery-title-box { display:block; background:#FFEEF3; padding:25px 0; margin:0 auto 60px; }
+    .gallery-title-box h2 { color:#EF007E; font-size:48px; letter-spacing:1px; margin:0; }
 
     .gallery-subtitle {
-      font-size: 22px;
-      margin: 50px 0 25px;
-      display: inline-block;
-      position: relative;
+      font-size:22px;
+      margin:50px 0 25px;
+      display:inline-block;
+      position:relative;
     }
 
     .gallery-subtitle::after {
-      content: "";
-      display: block;
-      width: 120px;
-      height: 2px;
-      background: #EF007E;
-      margin: 8px auto 0;
+      content:"";
+      display:block;
+      width:120px;
+      height:2px;
+      background:#EF007E;
+      margin:8px auto 0;
     }
 
     .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      max-width: 900px;
-      margin: 0 auto;
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:25px;
+      max-width:100%;
+      margin:0 auto;
     }
 
     .gallery-grid img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 14px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      cursor: pointer;
-      transition: 0.3s;
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      border-radius:14px;
+      box-shadow:0 6px 15px rgba(0,0,0,0.15);
+      cursor:pointer;
+      transition:0.3s;
     }
 
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-    }
+    .gallery-grid img:hover { transform:scale(1.05); }
 
-    .gallery-grid.family {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-    }
+    .gallery-grid.family { display:flex; justify-content:center; gap:25px; }
 
-    /* Lightbox */
+    /* ===== LIGHTBOX ===== */
     .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 10000;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.85);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:10000;
     }
 
     .lightbox img {
-      max-width: 85%;
-      max-height: 85%;
-      border-radius: 15px;
+      max-width:85%;
+      max-height:85%;
+      border-radius:15px;
     }
 
-.lightbox .close {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  color: white;
-  font-size: 32px;
-  cursor: pointer;
-  z-index: 10001;
-}
-
-    .lightbox .nav {
-      position: absolute;
-      top: 50%;
-      font-size: 40px;
-      color: white;
-      cursor: pointer;
-      padding: 20px;
-      user-select: none;
-    }
-
-    .lightbox .prev { left: 40px; }
-    .lightbox .next { right: 40px; }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 500px) {
-      .gallery-grid { grid-template-columns: 1fr; }
-    }
+    .lightbox .close { position:absolute; top:30px; right:40px; color:white; font-size:32px; cursor:pointer; z-index:10001; }
+    .lightbox .nav { position:absolute; top:50%; font-size:40px; color:white; cursor:pointer; padding:20px; user-select:none; }
+    .lightbox .prev { left:40px; }
+    .lightbox .next { right:40px; }
 
     /* ===== FLOATING MENU BUTTON ===== */
-.menu-wrapper{
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  z-index: 9999;
-}
+    .menu-wrapper {
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      z-index: 9999;
+    }
 
-.menu-btn{
-  background:#FF95A6;
-  color:#fff;
-  border:none;
-  padding:12px 22px;
-  border-radius:30px;
-  font-weight:600;
-  font-family:'Poppins', sans-serif;
-  cursor:pointer;
-  box-shadow:0 4px 10px rgba(0,0,0,0.3);
-}
+    .menu-btn {
+      background:#FF95A6;
+      color:#fff;
+      border:none;
+      padding:12px 22px;
+      border-radius:30px;
+      font-weight:600;
+      font-family:'Poppins', sans-serif;
+      cursor:pointer;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    }
 
-.menu-links{
-  display:none;
-  margin-top:10px;
-  background:rgba(255,255,255,0.95);
-  border-radius:15px;
-  padding:15px 20px;
-  box-shadow:0 6px 15px rgba(0,0,0,0.25);
-}
+    .menu-links {
+      display:none;
+      margin-top:10px;
+      background:rgba(255,255,255,0.95);
+      border-radius:15px;
+      padding:15px 20px;
+      box-shadow:0 6px 15px rgba(0,0,0,0.25);
+    }
 
-.menu-links a{
-  display:block;
-  text-decoration:none;
-  color:#EF007E;
-  font-weight:600;
-  margin:10px 0;
-  text-align:center;
-}
+    .menu-links a {
+      display:block;
+      text-decoration:none;
+      color:#EF007E;
+      font-weight:600;
+      margin:10px 0;
+      text-align:center;
+    }
 
-.menu-links a:hover{
-  color:#BEA2CE;
-}
+    .menu-links a:hover { color:#BEA2CE; }
 
-footer {
-  background: #D2BFDE;       
-  color: #fff;               
-  text-align: center;        
-  padding: 30px 0;             
-  font-size: 14px;           
-  font-family: 'Poppins', sans-serif; 
-  position: relative;       
-  bottom: 0;                 
-  width: 100vw;
-  left: 0;
-  box-sizing: border-box;
-}
+    /* ===== FOOTER ===== */
+    footer {
+      background: #D2BFDE;
+      color: #fff;
+      text-align: center;
+      padding: 30px 0;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      bottom:0;
+      width:100%;
+      box-sizing: border-box;
+      left:0;
+    }
 
-body, html {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
+    /* ===== RESPONSIVE ===== */
+    @media screen and (max-width:768px){
+      .section { flex-direction:column; text-align:center; }
+      .image-column, .text-column { flex:none; width:100%; }
+      #nav-top { position: static; margin-top:20px; }
+      .interest-box { width: 100%; }
+      .gallery-grid { grid-template-columns:1fr; }
+    }
 
-/* Section padding responsive */
-.section {
-  padding: 50px 5%; 
-}
-
-/* Contact form textarea responsive */
-.contact-form textarea {
-  width: 100%; /* instead of 399px */
-}
-
-/* Gallery grid responsive already handled by media queries */
-.gallery-grid {
-  margin: 0 auto;
-  max-width: 100%;
-}
-
-/* Interest grid responsive */
-.interest-grid {
-  max-width: 100%;
-}
-
+    @media screen and (max-width:500px){
+      #firstdivision h1 { font-size:40px; }
+      #firstdivision p { font-size:18px; }
+      .gallery-grid { grid-template-columns:1fr; }
+    }
   </style>
+</head>
 
-  <!-- FLOATING MENU -->
+<body>
+
+<!-- FLOATING MENU -->
 <div class="menu-wrapper">
   <button class="menu-btn" onclick="toggleMenu()">☰ MENU</button>
   <div class="menu-links" id="menuLinks">
@@ -514,120 +395,69 @@ body, html {
   </div>
 </div>
 
-</head>
-<body>
+<!-- ===== FIRST DIVISION ===== -->
+<div id="firstdivision">
+  <img src="aisha.jpeg" alt="web icon">
+  <h1>welcome to my page</h1>
+  <p>wanna know me better? let’s explore my page 🤗</p>
+</div>
 
-  <!--First division-->
-  <div id="firstdivision" style="
-       position: relative;
-       background-image: url('header2.jpg');
-       background-size: cover;
-       background-position: center;
-       height: 579px;
-       padding-top: 40px;
-       text-align:center;
-  ">
-    <img src="aisha.jpeg"
-         style="
-            height:150px;
-            border-radius:50%;
-            border: 8px solid #FFF5EE;
-            box-shadow:0 4px 10px rgba(0,0,0,0.2);
-         "
-         alt="web icon">
-
-    <h1 style="
-         font-family:'Poppins', sans-serif;
-         font-size:70px;
-         color:#fff;
-         margin:50px 0 10px 0;
-         font-weight:600;
-         text-shadow:0 0 5px #ffb3d9,
-                     0 0 10px #ff8cc6,
-                     0 0 15px #ff66b2;
-      ">
-      welcome to my page
-    </h1>
-
-    <p style="
-       font-family:'Poppins', sans-serif;
-       font-size:22px;
-       color:#fff;
-       font-weight:600;
-       letter-spacing:0.5px;
-       text-shadow:0 0 5px #ffb3d9,
-                   0 0 10px #ff8cc6,
-                   0 0 15px #ff66b2;
-       margin-top:-5px;
-    ">
-      wanna know me better? let’s explore my page 🤗
-    </p>
-
-    
+<!-- ===== SECOND DIVISION - ABOUT ME ===== -->
+<div id="seconddivision" class="section">
+  <div class="image-column">
+    <img src="1.jpg" alt="aisha" />
   </div>
-
-  <!--Second division - About Me -->
-  <div id="seconddivision" class="section">
-    <div class="image-column">
-      <img src="1.jpg" alt="aisha" />
-    </div>
-    <div class="text-column">
-      <h2>Hello</h2>
-      <p>My name is Nur Aisha Rafissah, but most people call me Aisha or Ecah. I was born on the 13th of October, 2005. I am the second child out of four siblings. I’m someone who doesn’t easily open up about my feelings whether I’m sad, hurt, or even really happy. Sometimes I share when I feel it’s necessary, but I usually keep some things to myself.</p>
-      <p>Once I decide to do something, I focus on it completely and often lose track of time. People often describe me as cheerful and easy-going, although I tend to overthink small things. I enjoy daydreaming about random “what if” scenarios and getting inspired by tiny details that others might overlook.</p>
-    </div>
+  <div class="text-column">
+    <h2>Hello</h2>
+    <p>My name is Nur Aisha Rafissah, but most people call me Aisha or Ecah. I was born on the 13th of October, 2005. I am the second child out of four siblings. I’m someone who doesn’t easily open up about my feelings whether I’m sad, hurt, or even really happy. Sometimes I share when I feel it’s necessary, but I usually keep some things to myself.</p>
+    <p>Once I decide to do something, I focus on it completely and often lose track of time. People often describe me as cheerful and easy-going, although I tend to overthink small things. I enjoy daydreaming about random “what if” scenarios and getting inspired by tiny details that others might overlook.</p>
   </div>
+</div>
 
-  <!--Third division - Interest -->
-  <div id="thirddivision" class="section">
-    <div class="text-column">
-      <!-- ===== INTEREST SECTION ===== -->
-      <div class="interest-section">
-        <h2 style="text-align:center; color:#EF007E; margin-bottom:30px;">My Interests </h2>
-        <p style="text-align:center;">
-          I’m a big fan of K-dramas and K-pop songs, and I love discovering new music and stories that inspire me. 
-        </p>
-        <br>
-        <div class="interest-grid">
-          <!-- Interest Boxes -->
-          <div class="interest-box">
-            <img src="movie header.png" alt="TvSeries / Movies"> 
-            <div class="interest-overlay">
-              <h3>TvSeries / Movies</h3>
-              <a href="movie.html" class="see-more-overlay">See More</a>
-            </div>
+<!-- ===== THIRD DIVISION - INTEREST ===== -->
+<div id="thirddivision" class="section">
+  <div class="text-column">
+    <div class="interest-section">
+      <h2 style="text-align:center; color:#EF007E; margin-bottom:30px;">My Interests </h2>
+      <p style="text-align:center;">I’m a big fan of K-dramas and K-pop songs, and I love discovering new music and stories that inspire me.</p>
+      <br>
+      <div class="interest-grid">
+        <div class="interest-box">
+          <img src="movie header.png" alt="TvSeries / Movies"> 
+          <div class="interest-overlay">
+            <h3>TvSeries / Movies</h3>
+            <a href="movie.html" class="see-more-overlay">See More</a>
           </div>
-
-          <div class="interest-box">
-            <img src="song header.png" alt="Songs / Music">
-            <div class="interest-overlay">
-              <h3>Songs / Music</h3>
-              <a href="song.html" class="see-more-overlay">See More</a>
-            </div>
+        </div>
+        <div class="interest-box">
+          <img src="song header.png" alt="Songs / Music">
+          <div class="interest-overlay">
+            <h3>Songs / Music</h3>
+            <a href="song.html" class="see-more-overlay">See More</a>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!--Fourth division - Education -->
-  <div id="fourthdivision" class="section">
-    <div class="text-column">
-      <h2>Education / School Life</h2>
-      <p>I spent my high school years at Sekolah Menengah Kebangsaan Seksyen 19, where I was always actively involved in various school activities. Some of my most memorable experience came from participating in events and contributing to the school community. I served as a prefect, holding the position of Assistant Head of Discipline in 2022/2023. Previously, I was the Head of the Canteen Committee and the Secretary of the Police Cadet uniform body in 2021.</p>
-      <p>High school wasn’t just about academics; but also about friendships, teamwork, and meaningful experiences that shaped who I am today.</p>
-      <p>Before joining UiTM to persue Diploma in Information Management, I was enrolled at Kolej Profesional MARA Bandar Melaka (KPMBM) for a Diploma in Islamic Finance. However, after receiving my UiTM offer, I decided to continue my studies there and paused my journey at KPMBM. Honestly, I enjoy what I’m learning now cause it’s quite fun and interesting, and I’m grateful to be surrounded by people I enjoy being with.</p>
-    </div>
-    <div class="image-column">
-      <img src="edu1.jpg" alt="aisha" />
-    </div>
+<!-- ===== FOURTH DIVISION - EDUCATION ===== -->
+<div id="fourthdivision" class="section">
+  <div class="text-column">
+    <h2>Education / School Life</h2>
+    <p>I spent my high school years at Sekolah Menengah Kebangsaan Seksyen 19, where I was always actively involved in various school activities. Some of my most memorable experience came from participating in events and contributing to the school community. I served as a prefect, holding the position of Assistant Head of Discipline in 2022/2023. Previously, I was the Head of the Canteen Committee and the Secretary of the Police Cadet uniform body in 2021.</p>
+    <p>High school wasn’t just about academics; but also about friendships, teamwork, and meaningful experiences that shaped who I am today.</p>
+    <p>Before joining UiTM to persue Diploma in Information Management, I was enrolled at Kolej Profesional MARA Bandar Melaka (KPMBM) for a Diploma in Islamic Finance. However, after receiving my UiTM offer, I decided to continue my studies there and paused my journey at KPMBM. Honestly, I enjoy what I’m learning now cause it’s quite fun and interesting, and I’m grateful to be surrounded by people I enjoy being with.</p>
   </div>
+  <div class="image-column">
+    <img src="edu1.jpg" alt="aisha" />
+  </div>
+</div>
 
-<!--Fifth division - Work Experience-->
+<!-- ===== FIFTH DIVISION - WORK EXPERIENCE ===== -->
 <div id="fifthdivision" class="section">
   <div class="text-column">
     <h2>Work Experience</h2>
-
     <h3>Retail Assistant – Guardian (March 2023 – Aug 2023)</h3>
     <ul>
       <li>Assisted customers with product inquiries</li>
@@ -635,7 +465,6 @@ body, html {
       <li>Operated POS & handled cash</li>
       <li>Maintained store organization</li>
     </ul>
-
     <h3>Promoter & CD Burning Assistant – Foto Unigraduate (Aug 2024 – Sept 2024)</h3>
     <ul>
       <li>Promoter at convocation venues</li>
@@ -643,7 +472,6 @@ body, html {
       <li>Provided technical support</li>
       <li>Ensured timely order completion</li>
     </ul>
-
     <h3>Intern Medical Record Department — SALAM Specialist Hospital (July 2025 – Sept 2025)</h3>
     <ul>
       <li>Assisted with medical record management</li>
@@ -656,51 +484,47 @@ body, html {
   </div>
 </div>
 
-  <!-- ===== MY GALLERY ===== -->
-  <div id="gallery" class="gallery-section">
-    <div class="gallery-title-box">
-      <h2>MY GALLERY</h2>
-    </div>
-
-    <h3 class="gallery-subtitle">Family</h3>
-    <div class="gallery-grid family">
-      <img src="G4.jpg" onclick="openLightbox('family',0)">
-      <img src="G5.jpg" onclick="openLightbox('family',1)">
-    </div>
-
-    <h3 class="gallery-subtitle">School Moments</h3>
-    <div class="gallery-grid">
-      <img src="G7.jpeg" onclick="openLightbox('school',0)">
-      <img src="G12.jpeg" onclick="openLightbox('school',1)">
-      <img src="G15.jpg" onclick="openLightbox('school',2)">
-      <img src="G14.jpg" onclick="openLightbox('school',3)">
-      <img src="G10.png" onclick="openLightbox('school',4)">
-      <img src="G9.jpg" onclick="openLightbox('school',5)">
-    </div>
-
-<!-- YouTube Video for School Moments -->
-<div style="text-align:center; margin:40px 0;">
-  <a href="https://youtu.be/4tc7BXDM6So?si=TiWRb-d3ETdu_xJh" target="_blank">
-    <img
-      src="https://img.youtube.com/vi/4tc7BXDM6So/hqdefault.jpg"
-      alt="Watch video on YouTube"
-      style="max-width:100%; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.15); cursor:pointer;">
-  </a>
-  <p style="margin-top:10px; font-weight:600; color:#EF007E;">Click Video to watch on YouTube</p>
-</div>
-
-    <h3 class="gallery-subtitle">Diploma Moments</h3>
-    <div class="gallery-grid">
-      <img src="G8.jpeg" onclick="openLightbox('diploma',0)">
-      <img src="G1.jpg" onclick="openLightbox('diploma',1)">
-      <img src="G2.jpg" onclick="openLightbox('diploma',2)">
-      <img src="G11.jpg" onclick="openLightbox('diploma',3)">
-      <img src="G16.jpg" onclick="openLightbox('diploma',4)">
-      <img src="G17.JPG" onclick="openLightbox('diploma',5)">
-    </div>
+<!-- ===== GALLERY ===== -->
+<div id="gallery" class="gallery-section">
+  <div class="gallery-title-box">
+    <h2>MY GALLERY</h2>
   </div>
 
-  <!-- ===== LIGHTBOX ===== -->
+  <h3 class="gallery-subtitle">Family</h3>
+  <div class="gallery-grid family">
+    <img src="G4.jpg" onclick="openLightbox('family',0)">
+    <img src="G5.jpg" onclick="openLightbox('family',1)">
+  </div>
+
+  <h3 class="gallery-subtitle">School Moments</h3>
+  <div class="gallery-grid">
+    <img src="G7.jpeg" onclick="openLightbox('school',0)">
+    <img src="G12.jpeg" onclick="openLightbox('school',1)">
+    <img src="G15.jpg" onclick="openLightbox('school',2)">
+    <img src="G14.jpg" onclick="openLightbox('school',3)">
+    <img src="G10.png" onclick="openLightbox('school',4)">
+    <img src="G9.jpg" onclick="openLightbox('school',5)">
+  </div>
+
+  <div style="text-align:center; margin:40px 0;">
+    <a href="https://youtu.be/4tc7BXDM6So?si=TiWRb-d3ETdu_xJh" target="_blank">
+      <img src="https://img.youtube.com/vi/4tc7BXDM6So/hqdefault.jpg" alt="Watch video on YouTube" style="max-width:100%; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.15); cursor:pointer;">
+    </a>
+    <p style="margin-top:10px; font-weight:600; color:#EF007E;">Click Video to watch on YouTube</p>
+  </div>
+
+  <h3 class="gallery-subtitle">Diploma Moments</h3>
+  <div class="gallery-grid">
+    <img src="G8.jpeg" onclick="openLightbox('diploma',0)">
+    <img src="G1.jpg" onclick="openLightbox('diploma',1)">
+    <img src="G2.jpg" onclick="openLightbox('diploma',2)">
+    <img src="G11.jpg" onclick="openLightbox('diploma',3)">
+    <img src="G16.jpg" onclick="openLightbox('diploma',4)">
+    <img src="G17.JPG" onclick="openLightbox('diploma',5)">
+  </div>
+</div>
+
+<!-- ===== LIGHTBOX ===== -->
 <div class="lightbox" id="lightbox">
   <span class="close" onclick="closeLightbox()">✕</span>
   <span class="nav prev" onclick="changeImg(-1)">❮</span>
@@ -708,77 +532,60 @@ body, html {
   <span class="nav next" onclick="changeImg(1)">❯</span>
 </div>
 
+<!-- ===== CONTACT CARD ===== -->
+<div id="contact" class="contact-card">
+  <h2>Contact Me:</h2>
+  <div class="contact-icons">
+    <a href="https://www.instagram.com/nrshafssh" target="_blank">
+      <div><img src="instagram logo.png" alt="Instagram" style="width:40px;height:40px;"></div>
+    </a>
+    <a href="mailto:nuraisharafissah@gmail.com">
+      <div><img src="gmail logo.png" alt="Email" style="width:40px;height:40px;"></div>
+    </a>
+  </div>
 
-  <!--Contact Section as Card-->
-  <div id="contact" class="contact-card">
-    <h2>Contact Me:</h2>
-    <div class="contact-icons">
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/nrshafssh" target="_blank">
-        <div>
-          <img src="instagram logo.png" alt="Instagram" style="width:40px; height:40px;">
-        </div>
-      </a>
-
-      <!-- Email -->
-      <a href="mailto:nuraisharafissah@gmail.com">
-        <div>
-          <img src="gmail logo.png" alt="Email" style="width:40px; height:40px;">
-        </div>
-      </a>
+  <form class="contact-form">
+    <div class="form-row">
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
     </div>
-    <form class="contact-form">
-  <div class="form-row">
-    <input type="text" placeholder="Name" required>
-    <input type="email" placeholder="Email" required>
-  </div>
-
-  <textarea placeholder="Message" rows="4" required></textarea>
-
-  <button type="submit">
-    ✈ SEND MESSAGE
-  </button>
-</form>
-
-  </div>
+    <textarea placeholder="Message" rows="4" required></textarea>
+    <button type="submit">✈ SEND MESSAGE</button>
+  </form>
+</div>
 
 <!-- ===== FOOTER ===== -->
 <footer id="footer">
   © 2025 Nur Aisha Rafissah (2023405792) <br>
   Diploma in Information Management (IMD318) <br>
-  Universiti Teknologi MARA, Rembau 
+  Universiti Teknologi MARA, Rembau
 </footer>
 
-  <script>
-    const galleries={
-      family:["G4.jpg","G5.jpg"],
-      school:["G7.jpeg","G12.jpeg","G15.jpg","G14.jpg","G10.png","G9.jpg"],
-      diploma:["G8.jpeg","G1.jpg","G2.jpg","G11.jpg","G16.jpg","G17.jpg"]
-    };
-
-    let currentGallery="",currentIndex=0;
-
-    function openLightbox(type,index){
-      currentGallery=type;
-      currentIndex=index;
-      document.getElementById("lightboxImg").src=galleries[type][index];
-      document.getElementById("lightbox").style.display="flex";
-    }
-
-    function closeLightbox(){
-      document.getElementById("lightbox").style.display="none";
-    }
-
-    function changeImg(step){
-      const imgs=galleries[currentGallery];
-      currentIndex=(currentIndex+step+imgs.length)%imgs.length;
-      document.getElementById("lightboxImg").src=imgs[currentIndex];
-    }
-    function toggleMenu(){
-  const menu = document.getElementById("menuLinks");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
+<!-- ===== SCRIPTS ===== -->
+<script>
+const galleries={
+  family:["G4.jpg","G5.jpg"],
+  school:["G7.jpeg","G12.jpeg","G15.jpg","G14.jpg","G10.png","G9.jpg"],
+  diploma:["G8.jpeg","G1.jpg","G2.jpg","G11.jpg","G16.jpg","G17.jpg"]
+};
+let currentGallery="", currentIndex=0;
+function openLightbox(type,index){
+  currentGallery=type;
+  currentIndex=index;
+  document.getElementById("lightboxImg").src=galleries[type][index];
+  document.getElementById("lightbox").style.display="flex";
 }
-  </script>
+function closeLightbox(){ document.getElementById("lightbox").style.display="none"; }
+function changeImg(step){
+  const imgs=galleries[currentGallery];
+  currentIndex=(currentIndex+step+imgs.length)%imgs.length;
+  document.getElementById("lightboxImg").src=imgs[currentIndex];
+}
+function toggleMenu(){
+  const menu=document.getElementById("menuLinks");
+  menu.style.display=menu.style.display==="block"?"none":"block";
+}
+</script>
 
 </body>
 </html>
