@@ -23,7 +23,14 @@
       scroll-behavior: smooth;
     }
 
-    /* Section Layout */
+    /* ===== MAKE IMAGES RESPONSIVE ===== */
+img {
+  max-width: 100%;   
+  height: auto;      
+  display: block;   
+
+}
+/* Section Layout */
     .section {
       display: flex;
       align-items: flex-start;
@@ -442,6 +449,17 @@
   box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
+/* ===== FLOATING MENU MOBILE FIX ===== */
+@media screen and (max-width: 400px) {
+  .menu-wrapper {
+    right: 10px;       
+  }
+  .menu-btn {
+    padding: 8px 12px; 
+    font-size: 14px;
+  }
+}
+
 .menu-links{
   display:none;
   margin-top:10px;
@@ -476,6 +494,66 @@ footer {
   width: 100%;               
 }
 
+/* ===== FIRST DIVISION ===== */
+#firstdivision {
+  position: relative;
+  background-image: url('header2.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 579px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+#firstdivision img {
+  display: block;
+  margin: 0 auto;
+  height: 150px;
+  border-radius: 50%;
+  border: 8px solid #FFF5EE;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#firstdivision h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 70px;
+  color: #fff;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 0 0 5px #ffb3d9,
+               0 0 10px #ff8cc6,
+               0 0 15px #ff66b2;
+}
+
+#firstdivision p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 5px #ffb3d9,
+               0 0 10px #ff8cc6,
+               0 0 15px #ff66b2;
+  margin: 0;
+}
+
+/* Responsive mobile */
+@media (max-width: 600px) {
+  #firstdivision h1 {
+    font-size: 40px;
+  }
+  #firstdivision p {
+    font-size: 16px;
+  }
+  #firstdivision img {
+    height: 120px;
+  }
+}
+
   </style>
 
   <!-- FLOATING MENU -->
@@ -494,53 +572,13 @@ footer {
 </head>
 <body>
 
-  <!--First division-->
-  <div id="firstdivision" style="
-       position: relative;
-       background-image: url('header2.jpg');
-       background-size: cover;
-       background-position: center;
-       height: 579px;
-       padding-top: 40px;
-       text-align:center;
-  ">
-    <img src="aisha.jpeg"
-         style="
-            height:150px;
-            border-radius:50%;
-            border: 8px solid #FFF5EE;
-            box-shadow:0 4px 10px rgba(0,0,0,0.2);
-         "
-         alt="web icon">
+<!--First division-->
+<div id="firstdivision">
+  <img src="aisha.jpeg" alt="web icon">
 
-    <h1 style="
-         font-family:'Poppins', sans-serif;
-         font-size:70px;
-         color:#fff;
-         margin:50px 0 10px 0;
-         font-weight:600;
-         text-shadow:0 0 5px #ffb3d9,
-                     0 0 10px #ff8cc6,
-                     0 0 15px #ff66b2;
-      ">
-      welcome to my page
-    </h1>
+  <h1>Welcome to my page</h1>
 
-    <p style="
-       font-family:'Poppins', sans-serif;
-       font-size:22px;
-       color:#fff;
-       font-weight:600;
-       letter-spacing:0.5px;
-       text-shadow:0 0 5px #ffb3d9,
-                   0 0 10px #ff8cc6,
-                   0 0 15px #ff66b2;
-       margin-top:-5px;
-    ">
-      wanna know me better? let’s explore my page 🤗
-    </p>
-
-    
+  <p>Wanna know me better? Let’s explore my page 🤗</p>   
   </div>
 
   <!--Second division - About Me -->
