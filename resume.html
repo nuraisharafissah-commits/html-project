@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newspaper Style Personal Website</title>
+<style>
+  body {
+    font-family: 'Georgia', serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  .container {
+    width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
+  .header {
+    text-align: center;
+    border-bottom: 3px solid #000;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+  }
+  .header h1 {
+    font-size: 42px;
+    margin: 0;
+    letter-spacing: 2px;
+  }
+  .header p {
+    font-size: 16px;
+    margin: 5px 0 0;
+    font-style: italic;
+  }
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+  }
+  .section-title {
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 8px;
+  }
+  .box {
+    border: 1px solid #000;
+    padding: 10px;
+    margin-top: 12px;
+    font-size: 14px;
+    background: #fafafa;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  a {
+    color: black;
+    text-decoration: underline;
+    font-size: 13px;
+  }
+  .hobbies img {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    object-fit: cover;
+    border: 1px solid #000;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>NUR ESAH</h1>
+    <p>The Story of a Creative & Passionate Student</p>
+  </div>
+
+  <div class="columns">
+
+    <!-- LEFT COLUMN -->
+    <div>
+      <div class="section-title">About Me</div>
+      <p>A detail-oriented student who enjoys creating clean visuals and presenting information in a clear, structured way. Passionate about photography, media content, and exploring creative ideas, while maintaining an organised approach in completing tasks and collaborating with others.</p>
+      <div class="hobbies">
+        <b>Hobbies & Interests:</b><br>
+        <img src="photography.jpg" alt="Photography">
+        <img src="kdrama.jpg" alt="K-Drama & Movies">
+        <img src="kpop.jpg" alt="K-Pop">
+      </div>
+
+      <div class="section-title">Contact</div>
+      <p>Email: yourname@gmail.com</p>
+      <p>Instagram: @yourname</p>
+      <p>Phone: 01X-XXXXXXX</p>
+
+      <div class="section-title">Skills</div>
+      <ul>
+        <li>Communication</li>
+        <li>Teamwork</li>
+        <li>Creative Editing</li>
+      </ul>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div>
+      <div class="section-title">Education</div>
+      <p><b>Diploma in Information Management</b><br>
+         UiTM Negeri Sembilan, Kampus Rembau<br>
+         Oct 2023 – Feb 2026<br>
+         CGPA: 3.🌸🌸</p>
+      <p><b>SMK Seksyen 19, Shah Alam</b><br>
+         2017 – 2023<br>
+         SPM 2022</p>
+
+      <div class="section-title">Work Experience</div>
+      <p><b>Retail Assistant – Guardian</b> (March 2023 – Aug 2023)<br>
+         - Assisted customers with product inquiries<br>
+         - Managed stock display & replenishment<br>
+         - Operated POS & handled cash<br>
+         - Maintained store organization</p>
+      <p><b>Promoter & CD Burning Assistant – Foto Unigraduate</b> (Aug 2024 – Sept 2024)<br>
+         - Promoter at convocation venues<br>
+         - Assisted CD/DVD burning tasks<br>
+         - Provided technical support<br>
+         - Ensured timely order completion</p>
+      <p><b>Intern Medical Record Department — SALAM Specialist Hospital</b> (July 2025 – Sept 2025)<br>
+         - Assisted with medical record management<br>
+         - Daily operations<br>
+         - Patient file handling</p>
+
+      <div class="section-title">Achievements</div>
+      <ul>
+        <li>Dean's List</li>
+        <li>Project Awards</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Songs | Nur Aisha Rafissah</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  color: #333;
+}
+h1, h2 {
+  font-family: 'Merriweather', serif;
+}
+
+/* ===== FLOATING MENU ===== */
+.menu-wrapper {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 9999;
+}
+.menu-btn {
+  background:#FF95A6;
+  color:#fff;
+  border:none;
+  padding:12px 22px;
+  border-radius:30px;
+  font-weight:600;
+  font-family:'Poppins', sans-serif;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+.menu-btn:hover {
+  background:#D2BFDE;
+}
+.menu-links {
+  display:none;
+  margin-top:10px;
+  background:rgba(255,255,255,0.95);
+  border-radius:15px;
+  padding:15px 20px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.25);
+}
+.menu-links a {
+  display:block;
+  text-decoration:none;
+  color:#EF007E;
+  font-weight:600;
+  margin:10px 0;
+  text-align:center;
+}
+.menu-links a:hover {
+  color:#BEA2CE;
+}
+
+/* ===== HEADER ===== */
+header {
+  min-height: 500px;
+  background: url('song header.png') center/cover no-repeat;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+header h1 {
+  font-size: 60px;
+  color: #fff;
+  text-shadow: 0 0 10px #ff8cc6;
+}
+header p {
+  font-size: 22px;
+  color: #fff;
+  text-shadow: 0 0 8px #ff8cc6;
+}
+
+/* ===== GALLERY ===== */
+.gallery {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+.video img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform .3s;
+}
+.video img:hover {
+  transform: scale(1.05);
+}
+.video p {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* ===== OVERLAY ===== */
+.thumb {
+  position: relative;
+  display: block;
+}
+.overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,149,166,.85);
+  color: #fff;
+  padding: 6px 15px;
+  font-size: 12px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity .3s;
+  white-space: nowrap;
+}
+.thumb:hover .overlay {
+  opacity: 1;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #D2BFDE;
+  color: #fff;
+  text-align: center;
+  padding: 30px;
+  font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .gallery { grid-template-columns: repeat(3,1fr); }
+}
+@media(max-width:768px){
+  .gallery { grid-template-columns: repeat(2,1fr); }
+}
+@media(max-width:500px){
+  .gallery { grid-template-columns: 1fr; }
+  header h1 { font-size: 40px; }
+  header p { font-size: 18px; }
+}
+</style>
+</head>
+
+<body>
+
+  <!-- FLOATING MENU -->
+<div class="menu-wrapper">
+  <button class="menu-btn" onclick="toggleMenu()">☰ MENU</button>
+  <div class="menu-links" id="menuLinks">
+    <a href="index.html#seconddivision">About Me</a>
+    <a href="index.html#thirddivision">My Interest</a>
+    <a href="index.html#fourthdivision">Education</a>
+    <a href="index.html#fifthdivision">Work Experience</a>
+    <a href="index.html#gallery">Gallery</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <h1>My Top Songs</h1>
+  <p>All-time favourites 🎧</p>
+</header>
+
+<!-- ===== SONG GALLERY ===== -->
+<div class="gallery">
+
+  <div class="video">
+    <a href="https://youtu.be/cNnY5hVGi4Y" target="_blank" class="thumb">
+      <img src="https://img.youtube.com/vi/cNnY5hVGi4Y/hqdefault.jpg" alt="EXO">
+      <span class="overlay">Watch on YouTube</span>
+    </a>
+    <p>EXO – Just As Usual</p>
+  </div>
+
+  <div class="video">
+    <a href="https://youtu.be/FD2mik4V5EE" target="_blank" class="thumb">
+      <img src="https://img.youtube.com/vi/FD2mik4V5EE/hqdefault.jpg" alt="Wanna One">
+      <span class="overlay">Watch on YouTube</span>
+    </a>
+    <p>Wanna One – Spring Breeze</p>
+  </div>
+
+  <div class="video">
+    <a href="https://youtu.be/2R_S5TgDWMY" target="_blank" class="thumb">
+      <img src="https://img.youtube.com/vi/2R_S5TgDWMY/hqdefault.jpg" alt="NCT Dream">
+      <span class="overlay">Watch on YouTube</span>
+    </a>
+    <p>NCT Dream – Broken Melodies</p>
+  </div>
+
+  <div class="video">
+    <a href="https://youtu.be/iFoqGyWhMws" target="_blank" class="thumb">
+      <img src="https://img.youtube.com/vi/iFoqGyWhMws/hqdefault.jpg" alt="NCT 127">
+      <span class="overlay">Watch on YouTube</span>
+    </a>
+    <p>NCT 127 – Highway to Heaven</p>
+  </div>
+
+  <div class="video">
+    <a href="https://youtu.be/wBr2O6_es2U" target="_blank" class="thumb">
+      <img src="https://img.youtube.com/vi/wBr2O6_es2U/hqdefault.jpg" alt="WayV">
+      <span class="overlay">Watch on YouTube</span>
+    </a>
+    <p>WayV – Let Me Love U</p>
+  </div>
+
+  <div class="video">
+    <a href="https://youtu.be/iUw3LPM7OBU" target="_blank" class="thumb">
+      <img src="https://img.youtube.com/vi/iUw3LPM7OBU/hqdefault.jpg" alt="RIIZE">
+      <span class="overlay">Watch on YouTube</span>
+    </a>
+    <p>RIIZE – Get A Guitar</p>
+  </div>
+
+  <div class="video">
+    <a href="https://youtu.be/WpuatuzSDK4" target="_blank" class="thumb">
+      <img src="https://img.youtube.com/vi/WpuatuzSDK4/hqdefault.jpg" alt="SEVENTEEN">
+      <span class="overlay">Watch on YouTube</span>
+    </a>
+    <p>SEVENTEEN – Rock With You</p>
+  </div>
+
+  <div class="video">
+    <a href="https://youtu.be/bqzDuRz_P7g" target="_blank" class="thumb">
+      <img src="https://img.youtube.com/vi/bqzDuRz_P7g/hqdefault.jpg" alt="BLACKPINK">
+      <span class="overlay">Watch on YouTube</span>
+    </a>
+    <p>BLACKPINK – Don’t Know What To Do</p>
+  </div>
+
+  <div class="video">
+    <a href="https://youtu.be/Fc7-Oe0tj5k" target="_blank" class="thumb">
+      <img src="https://img.youtube.com/vi/Fc7-Oe0tj5k/hqdefault.jpg" alt="ENHYPEN">
+      <span class="overlay">Watch on YouTube</span>
+    </a>
+    <p>ENHYPEN – Drunk-Dazed</p>
+  </div>
+
+  <div class="video">
+    <a href="https://youtu.be/z2ZjutyxmjA" target="_blank" class="thumb">
+      <img src="https://img.youtube.com/vi/z2ZjutyxmjA/hqdefault.jpg" alt="aespa">
+      <span class="overlay">Watch on YouTube</span>
+    </a>
+    <p>aespa – Life’s Too Short</p>
+  </div>
+
+  <div class="video">
+    <a href="https://youtu.be/kbdW2LaKlnw" target="_blank" class="thumb">
+      <img src="https://img.youtube.com/vi/kbdW2LaKlnw/hqdefault.jpg" alt="I.O.I">
+      <span class="overlay">Watch on YouTube</span>
+    </a>
+    <p>I.O.I – Downpour</p>
+  </div>
+
+  <div class="video">
+    <a href="https://youtu.be/sA3taBUfp-Q" target="_blank" class="thumb">
+      <img src="https://img.youtube.com/vi/sA3taBUfp-Q/hqdefault.jpg" alt="TREASURE">
+      <span class="overlay">Watch on YouTube</span>
+    </a>
+    <p>TREASURE – ORANGE</p>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  © 2025 Nur Aisha Rafissah (2023405792) <br>
+  Diploma in Information Management (IMD318) <br>
+  Universiti Teknologi MARA, Rembau 
+</footer>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("menuLinks");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
