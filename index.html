@@ -1,7 +1,8 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- UPDATED -->
   <title>Aisha’s First Website</title>
   <link rel="shortcut icon" type="image/jpg" href="aisha.jpeg"/>
 
@@ -64,7 +65,6 @@
 #fifthdivision .image-column {
   padding-top: 10px; /* optional, adjust ikut kesesuaian */
 }
-
 
     /* Headings */
     .section h2 {
@@ -168,6 +168,7 @@
         margin-top: 20px;
       }
     }
+
     /* ===== CONTACT FORM ===== */
 .contact-form {
   margin-top: 35px;
@@ -216,8 +217,11 @@
   .form-row {
     flex-direction: column;
   }
-}
 
+  .contact-form textarea {
+    width: 100%; /* responsive textarea */
+  }
+}
 
     /* ===== INTEREST / SONGS THUMBNAIL ===== */
     .interest-section {
@@ -299,14 +303,14 @@
 
     /* ===== MY GALLERY ===== */
     .gallery-section {
-  max-width: 1000px;      
-  margin: 40px auto;      
-  padding: 40px;           
-  text-align: center;
-  background: url('whitepink.jpeg') center/cover;
-  border: 3px solid #EF007E;
-  border-radius: 15px;
-}
+      max-width: 1000px;      
+      margin: 40px auto;      
+      padding: 40px;           
+      text-align: center;
+      background: url('whitepink.jpeg') center/cover;
+      border: 3px solid #EF007E;
+      border-radius: 15px;
+    }
 
     .gallery-title-box {
       display: block;
@@ -344,6 +348,7 @@
       gap: 25px;
       max-width: 900px;
       margin: 0 auto;
+      overflow-x: auto; /* allow scroll on overflow */
     }
 
     .gallery-grid img {
@@ -354,6 +359,7 @@
       box-shadow: 0 6px 15px rgba(0,0,0,0.15);
       cursor: pointer;
       transition: 0.3s;
+      flex-shrink: 0; /* prevent shrinking */
     }
 
     .gallery-grid img:hover {
@@ -364,6 +370,8 @@
       display: flex;
       justify-content: center;
       gap: 25px;
+      overflow-x: auto; /* horizontal scroll on phone */
+      flex-wrap: nowrap; /* 1 row */
     }
 
     /* Lightbox */
@@ -383,15 +391,15 @@
       border-radius: 15px;
     }
 
-.lightbox .close {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  color: white;
-  font-size: 32px;
-  cursor: pointer;
-  z-index: 10001;
-}
+    .lightbox .close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: white;
+      font-size: 32px;
+      cursor: pointer;
+      z-index: 10001;
+    }
 
     .lightbox .nav {
       position: absolute;
@@ -468,7 +476,6 @@ footer {
   bottom: 0;                 
   width: 100%;               
 }
-
   </style>
 
   <!-- FLOATING MENU -->
