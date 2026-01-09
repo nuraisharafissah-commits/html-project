@@ -153,21 +153,28 @@
 
     /* Responsive */
     @media screen and (max-width: 768px) {
-      .section {
-        flex-direction: column;
-        text-align: center;
-      }
+  .section {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;  
+    gap: 30px;            
+  }
 
-      .image-column, .text-column {
-        flex: none;
-        width: 100%;
-      }
+  .image-column, .text-column {
+    flex: none;
+    width: 100%;
+  }
 
-      #nav-top {
-        position: static;
-        margin-top: 20px;
-      }
-    }
+  .text-column p {
+    text-align: center; 
+  }
+
+  #nav-top {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
     /* ===== CONTACT FORM ===== */
 .contact-form {
   margin-top: 35px;
